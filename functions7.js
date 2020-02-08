@@ -83,7 +83,7 @@ function lessThanOrEqualToZero(num) {
   if (num <= 0) {
     return true;
   } else return false;
-}
+};
 
 console.log(lessThanOrEqualToZero(3));
 console.log(lessThanOrEqualToZero(0));
@@ -244,6 +244,8 @@ console.log(isPrime(7));
 console.log(isPrime(9)); 
 console.log(isPrime(10)); 
 
+
+console.log("Exercise 11:");
 // **11. Validate Email.**
 // Create a function that takes a string, checks if it's a valid email address, and then accordingly returns 
 //either true or false.
