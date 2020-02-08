@@ -48,8 +48,10 @@ console.log(sumOfCubes(1, 5, 9));
 console.log(sumOfCubes(2));
 console.log(sumOfCubes()); 
 
+console.log("Exercise 3:")
 // **3. String Check.**
-// Create a function that takes a string and a word, and then returns true or false depending on whether the word starts with the initial string.
+// Create a function that takes a string and a word, and then returns true or false depending on whether the word 
+//starts with the initial string.
 
 
 // Examples:
@@ -57,8 +59,24 @@ console.log(sumOfCubes());
 // * dictionary("tri", "triplet") ➞ true
 // * dictionary("beau", "pastry") ➞ false
 
+const dictionary=(letter, string)=>{
+    if(string.startsWith(letter)){
+        return true;
+    }else{
+        return false;
+    }
+    
+}
+
+console.log(dictionary("bu", "button")); 
+console.log(dictionary("tri", "triplet"));
+console.log(dictionary("beau", "pastry"));
+
+
+console.log("Exercise 4:")
 // **4. Less Than or Equal to Zero?**
-// Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise return false.
+// Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, 
+//otherwise return false.
 
 // Examples:
 // * lessThanOrEqualToZero(3) ➞ false
@@ -66,20 +84,60 @@ console.log(sumOfCubes());
 // * lessThanOrEqualToZero(-4) ➞ true
 // * lessThanOrEqualToZero(10) ➞ false
 
+function lessThanOrEqualToZero(num){
+    if(num<=0){
+        return true;
+    }else return false;
+
+}
+
+console.log(lessThanOrEqualToZero(3)); 
+console.log(lessThanOrEqualToZero(0)); 
+console.log(lessThanOrEqualToZero(-4));
+console.log(lessThanOrEqualToZero(10)); 
+
+
+console.log("Exercise 5:")
 // **5. Count Occurrences.** 
-// Create a function that accepts two arguments: a string and a letter. The function should count the number of occurrences of that letter in the string. 
+// Create a function that accepts two arguments: a string and a letter. The function should count the 
+//number of occurrences of that letter in the string. 
 
 // i.e. 
 // countOccurrences("this is a string", "i") ➞ 3 
+const countOccurrences=(str, letter)=>{
+    let count = "";
+    for(let i=0; i<str.length; i++){
+        if(str[i].includes(letter)){
+            count++;
+        }
+    }return count;
+}
 
+console.log(countOccurrences("this is a string", "i"));
+console.log(countOccurrences("this is a string", "t"));
+
+console.log("Exercise 6:")
 // **6. X To The Power of X.**
-// Create a function that takes a base number and an exponent number and returns the calculation. **NB:** All test inputs will be positive integers.
+// Create a function that takes a base number and an exponent number and returns the calculation. **NB:** 
+//All test inputs will be positive integers.
 
 // Examples:
 // * calculateBaseToExponent(5, 5) ➞ 3125
 // * calculateBaseToExponent(10, 10) ➞ 10000000000
 // * calculateBaseToExponent(3, 3) ➞ 27
 
+const calculateBaseToExponent =(base, exp)=>{
+    let calc = Math.pow(base,exp);
+    return calc;
+
+}
+
+console.log(calculateBaseToExponent(5, 5)); 
+console.log(calculateBaseToExponent(10, 10)); 
+console.log(calculateBaseToExponent(3, 3));
+
+
+console.log("Exercise 7:")
 // **7. Where's Waldo?**
 // Create a function that takes a string and returns true if Waldo is found, and false if he's not.
 
@@ -89,6 +147,19 @@ console.log(sumOfCubes());
 // * isWaldoHere("is wally here?") ➞ false
 // * isWaldoHere("waldo is here") ➞ true
 
+function isWaldoHere(string){ 
+        if(string.includes("waldo")||string.includes("Waldo")){
+            return true;
+        }else return false;
+    
+}
+console.log(isWaldoHere("is there wal here ?"));
+console.log(isWaldoHere("I found you Waldo!")); 
+console.log(isWaldoHere("is wally here?")); 
+console.log(isWaldoHere("waldo is here"));
+
+
+console.log("Exercise 8:")
 // **8. Pie.** 
 // Create a function that determines whether or not it's possible to split a pie fairly given these three parameters:
 
@@ -103,8 +174,22 @@ console.log(sumOfCubes());
 // * equalSlices(8, 3, 3) ➞ false
 // * equalSlices(24, 12, 2) ➞ true
 
+const equalSlices = (totalNumOfSlices,recipients,sliceProPers)=>{
+    let totalSlices = recipients*sliceProPers;
+    if(totalSlices<=totalNumOfSlices){
+        return true;
+    }else return false;
+
+}
+
+console.log(equalSlices(11, 5, 3));
+console.log(equalSlices(8, 3, 2)); 
+console.log(equalSlices(8, 3, 3)); 
+console.log(equalSlices(24, 12, 2)); 
+
 // **9. XO**
-// Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns either true or false.
+// Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns either 
+//true or false.
 
 // Notes:
 	

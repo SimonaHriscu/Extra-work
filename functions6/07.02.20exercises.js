@@ -134,6 +134,3 @@ function differenceMaxMin(arr){
     return difference;
 
 }
-
-console.log(differenceMaxMin([10, 4, 1, 4, -10, -50, 32, 21]))
-console.log(differenceMaxMin([44, 32, 86, 19]))
