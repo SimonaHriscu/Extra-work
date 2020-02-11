@@ -121,13 +121,28 @@ console.log(leapYears(32));
 //   2. Write a function that gives us the largest number in an array. Example: [2, 4, 10, -1] returns 10
 
 const largestNumber =(arr)=>{
-  
+  let max=arr[0];
+  //console.log(max);
   for(let i=0; i<arr.length; i++){
-    console.log(arr[i])
-  }
+    //console.log(arr[i]);
+     if(arr[i] > max){
+       max = arr[i];
+     }
+  } return max;
 }
 
 console.log(largestNumber([2, 4, 10, -1]))
 
 //   3. Write a function that gives us all numbers in an array added together. Example: [1, 2, 3] returns 6
 
+
+const elementSum = (arr)=>{
+  let sum = 0;
+  for(let i = 0; i<arr.length;i++){
+    sum+=arr[i];
+
+  }return sum;
+}
+
+console.log(elementSum([1, 2, 3]));//6
+console.log(elementSum([1, 2, 3, 4, 5])); //15
