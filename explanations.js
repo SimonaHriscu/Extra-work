@@ -83,3 +83,31 @@ const starMaker = () => {
 };
 
 starMaker();
+
+for(let i = 0; i<6; i++){
+    let box2 = '';
+    for(let j= 0; j < i; j++){
+        box2+="@"
+    }
+    console.log(box2);
+}
+
+
+// 2. Scrabble. Write a program that, given an array of scrabble tiles, counts the maximum score that a player 
+//can earn from the tiles in their hand. 
+//Example: [ { tile: "N", score: 1 }, { tile: "K", score: 5 }, { tile: "Z", score: 10 }, 
+//{ tile: "X", score: 8 }, { tile: "D", score: 2 }, { tile: "A", score: 1 }, { tile: "E", score: 1 } ]
+
+// The player's maximum score: 1 + 5 + 10 + 8 + 2 + 1 + 1 = 28
+
+function maxScore(arr){
+  let arr2 = [];
+  for(let i=0; i<arr.length; i++){
+   arr.push(arr2[i]);
+  }
+ return (arr2[i]);
+  
+}
+
+console.log( maxScore([ { tile: "N", score: 1 }, { tile: "K", score: 5 }, { tile: "Z", score: 10 },
+ { tile: "X", score: 8 }, { tile: "D", score: 2 }, { tile: "A", score: 1 }, { tile: "E", score: 1 } ]));

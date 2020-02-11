@@ -95,24 +95,39 @@ console.log(multiplyByThree(numbers2)); //should return [6, 9, 15]
 //  Extra:
 //   1. Write a function that gives us the next 20 leap years. (Schaltjahre)
 
-function leapYears(num) {
+
+//If a year is not divisible by 4, or divisible by 100 but not by 400, then it's a common year.
+function leapYears(...num) {
+  //console.log(num);
   let yearNow = new Date().getFullYear();
-  let resultLeap="";
-  for(i=0; i<=num.length; i++){
-    if(i%4 === 0){
-    resultLeap+= 1;
-  }
-    
-    return resultLeap;
-  }
-  
-  console.log(resultLeap);
-  console.log(yearNow)
-  
+  let resultLeap=[];
+  let totalYears=[];
+  for(let i=0; i<num.length; i++){
+    totalYears.push(yearNow+num[i]);
+   // console.log(totalYears)
 }
+  for(let j=0; j<totalYears.length; j++){
+ if (totalYears[j]%4 == 0 || (totalYears[j]%100 !== 0 && totalYears[j]%400 == 0)){
+  resultLeap.push(totalYears[j]);
+     //console.log(totalYears[j]);
+}
+} return `${resultLeap} is a leap year`;
+};
 
 console.log(leapYears(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20));
 console.log(leapYears(40));
+console.log(leapYears(32));
+
 //   2. Write a function that gives us the largest number in an array. Example: [2, 4, 10, -1] returns 10
+
+const largestNumber =(arr)=>{
+  
+  for(let i=0; i<arr.length; i++){
+    console.log(arr[i])
+  }
+}
+
+console.log(largestNumber([2, 4, 10, -1]))
+
 //   3. Write a function that gives us all numbers in an array added together. Example: [1, 2, 3] returns 6
 
