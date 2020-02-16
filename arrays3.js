@@ -62,12 +62,29 @@ console.log("Exercise 2:");
 // **2. For the longest word.**
 // Create a function to find the longest word in a given string. 
 
+function longestWord(string){
+    let stringSplit = string.split(" ");
+    //console.log(stringSplit);
+    let assumedLongestWord = stringSplit[0];
+    for(let i = 0; i< stringSplit.length; i++){
+        if(stringSplit[i].length > assumedLongestWord.length){
+            assumedLongestWord = stringSplit[i];
+        }
+    } return assumedLongestWord;
+}
+
+console.log(longestWord("this is a web development course"));
 // i.e. longestWord("this is a web development course") ➞  "development"
 
 console.log("Exercise 3:");
 // **3. Reverse.**
 // Create a function to reverse a number. 
 
+function reverseNum(num){
+    return num.toString().split("").reverse().join("");
+
+}
+console.log(reverseNum(34532));
 // i.e. reverse(34532) ➞ 23543
 
 console.log("Exercise 4:");
@@ -76,6 +93,20 @@ console.log("Exercise 4:");
 // (i.e. in English, "a, e, i, o, u") in the string. 
 
 // i.e. findVowels("this is a string") ➞ 4
+
+function findVowels(string){
+    let vowels = ["a", "e", "i", "o", "u"];
+    let counter = 0;
+    for(let i = 0;  i<string.length; i++){
+        //console.log(string[i]);
+        if(vowels.includes(string[i])){
+            counter++;
+        }
+    }
+    return counter;
+}
+console.log(findVowels("this is a string tralala"));
+
 
 console.log("Exercise 5:");
 // **5. Missing Number.**
@@ -174,6 +205,21 @@ console.log("Exercise 7:");
 // * dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) ➞ ["triplet", "tries", trip"]
 // * dictionary("beau", ["pastry", "delicious", "name", "boring"]) ➞ []
 
+function dictionary(str, arr){
+    //console.log(arr)
+    let newArr = [];
+    for(let i = 0; i <arr.length; i++){
+        if(arr[i].startsWith(str)){
+            newArr.push(arr[i]);
+        }
+    } return newArr;
+
+}
+
+console.log(dictionary("bu", ["button", "breakfast", "border"]))
+console.log(dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]))
+console.log(dictionary("beau", ["pastry", "delicious", "name", "boring"]))
+
 console.log("Exercise 8:");
 // **8. Even Number Generator.**
 // Create a function that finds all even numbers from 1 to the given number.
@@ -203,3 +249,11 @@ console.log("Bonus:");
 // not included in the string.
 
 // i.e. alphaOrder("webdev") ➞ "bdeevw" 
+
+function alphaOrder(str){
+   
+   return str.split("").sort().join("");
+
+}
+
+console.log(alphaOrder("webdev"));
