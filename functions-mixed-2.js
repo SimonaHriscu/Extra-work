@@ -80,6 +80,7 @@ console.log(pluralize(1, "cat"));
 console.log(pluralize(5, "dog"));
 console.log(pluralize(2, "table"));
 
+
 // 5. FixStart
 // Create a function called fixStart. It should take a single argument, a string, and return a version where 
 //all occurences of its first character have been replaced with '*', except for the first character itself.
@@ -89,18 +90,44 @@ console.log(pluralize(2, "table"));
 // fixStart("people") -> "peo*le"
 // fixStart("nonsense") -> "no*se*se"
 
-const fixStart = (string)=>{
+const fixStart = (string) => {
+    const array = string.split("");
+    for (let i = 1; i < array.length; i++) {
+      letter = array[0];
+      array[i] = array[i].replace(letter, "*");
+    }
+    return array.join("");
+  };
+  console.log(fixStart("babble"));
+  console.log(fixStart("people"));
+  console.log(fixStart("nonsense"));
+
+// const fixStart = str => {
+//     let splitString = str.split("");
+//     let firstChar = splitString[0];
+//     let restChar = splitString.slice(1, splitString.length);
+//     for (let i = 0; i < splitString.length; i++)
+//       if (restChar[i] == firstChar) {
+//         restChar[i] = "*";
+//       }
+//     return firstChar + restChar.join("");
+//   };
+  
+// console.log(fixStart("babble")) ;
+// console.log(fixStart("people")) ;
+// console.log(fixStart("nonsense"));
+
+
+//////////////////////////////////////////////////////////////////
+ 
 
 
 
-}
-
-console.log(fixStart("babble")) ;
-console.log(fixStart("people")) ;
-console.log(fixStart("nonsense"));
-
-// 6. Not Bad
-// Create a function called notBad that takes a single argument, a string. It should find the first appearance of the substring 'not' and 'bad'. If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring with 'good' and return the result. If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
+    // 6. Not Bad
+// Create a function called notBad that takes a single argument, a string. It should find the first appearance of the 
+//substring 'not' and 'bad'. If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring 
+//with 'good' and return the result. If it doesn't find 'not' and 'bad' in the right sequence (or at all), 
+//just return the original sentence.
 
 // Examples:
 // notBad('This dinner is not that bad!') -> 'This dinner is good!'
