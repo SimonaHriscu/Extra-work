@@ -94,6 +94,21 @@ console.log("**** Exercise 3")
 // const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}];
 // findById(data, 2) // should return {id: 2, foo: 'bizz'}
 
+const data = [{id: 1, foo: 'bar'}, {id: 2, foo: 'bizz'}];
+const findById=(items, idNum)=>{
+  for (let i = 0; i < items.length; i++) {
+    if(idNum===items[i].id){
+      return items[i];
+    }
+
+}
+
+}
+
+console.log(findById(data, 2));
+
+
+
 console.log("**** Exercise 4")
 // Validate object keys
 // Spend up to 20 minutes writing a function called validateKeys. This function takes 2 arguments, object and expectedKeys. 
@@ -103,3 +118,25 @@ console.log("**** Exercise 4")
 // validateKeys should return true if object has all of the keys from expectedKeys, and no additional keys. It should return 
 // false if one or more of the expectedKeys is missing from the object, or if the object contains extra keys not in 
 // expectedKeys.
+function validateKeys(object, expectedKeys) {
+  let objKeys= Object.keys(object);
+     return (objKeys.length === expectedKeys.length)
+  
+}
+
+console.log(validateKeys(
+  {
+  id: 2,
+  name: 'Jane Doe',
+  age: 34,
+  city: 'Chicago',
+},
+['id', 'name', 'age', 'city'])); //true
+
+console.log(validateKeys(
+  {
+    id: 3,
+    age: 33,
+    city: 'Peoria',
+  },
+['id', 'name', 'age', 'city'])); //false
